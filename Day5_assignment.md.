@@ -1,0 +1,452 @@
+DAY 5 ASSIGNMENT
+
+Technical Writing
+
+Student Name: Hassan Abdi Ahmed
+Assignment: Day 5 – Technical Writing
+
+EXERCISE A: USER MANUAL PROCEDURE
+
+Topic: How to Create a GitHub Repository and Make Your First Commit
+
+1. Introduction
+
+As a Computer Science student, learning how to use GitHub is an important part of developing programming skills. GitHub makes it easier to store projects, keep track of changes, and share work with other developers.
+
+In this guide, I will explain how a beginner can create a GitHub repository and make their first commit using the GitHub website.
+
+I have kept the instructions simple so that even someone using GitHub for the first time can follow them without much difficulty.
+
+2. Prerequisites
+
+Before getting started, you will need:
+
+A computer with a working internet connection.
+
+A web browser such as Google Chrome or Microsoft Edge.
+
+An active GitHub account.
+
+Your GitHub username and password.
+
+Basic computer skills, such as opening websites and clicking buttons.
+
+3. Step-by-Step Procedure
+
+Step 1: Open GitHub.
+
+Open your preferred web browser and visit https://github.com.
+
+Expected result: The GitHub homepage will appear on your screen.
+
+Step 2: Sign in to your account.
+
+Click the Sign in button and enter your GitHub username or email address and password.
+
+Expected result: You will be taken to your GitHub dashboard.
+
+Step 3: Open the repository creation page.
+
+Click the plus (+) icon in the top-right corner and select New repository.
+
+Expected result: A page containing the repository creation form will appear.
+
+Step 4: Enter a repository name.
+
+Type a name that describes your project. For example, you can use my-first-project.
+
+Expected result: Your chosen name will appear in the repository name field.
+
+Step 5: Choose repository visibility.
+
+Select the Public option to make your repository accessible to other GitHub users.
+
+Expected result: The Public option will be selected.
+
+Step 6: Add a README file.
+
+Select the checkbox labelled Add a README file.
+
+Expected result: GitHub will prepare a README file for your repository.
+
+Step 7: Create your repository.
+
+Click the Create repository button.
+
+Expected result: Your new repository will open, and you will see the README.md file.
+
+Step 8: Open the README file for editing.
+
+Click README.md and select the edit option represented by the pencil icon.
+
+Expected result: The README file will open in an editing area where you can add information about your project.
+
+Step 9: Add a project description.
+
+Write a short description explaining what your project is about.
+
+Expected result: Your project description will appear in the README editor.
+
+Step 10: Commit your changes.
+
+Click Commit changes, enter a short message describing your update, and confirm the commit.
+
+Expected result: GitHub will save your changes and display the new commit in your repository history.
+
+4. Screenshot Description
+
+To make this guide easier to understand, I would include a screenshot of the completed GitHub repository.
+
+The screenshot should show:
+
+The name of the repository.
+
+The README.md file.
+
+The repository visibility showing Public.
+
+The commit history confirming that changes have been saved.
+
+This screenshot would help a beginner recognize a successfully created repository and understand what the final result should look like.
+
+5. Troubleshooting
+
+Common problem: Unable to create a repository because the name is unavailable.
+
+A beginner may sometimes try to use a repository name that is already being used in their GitHub account.
+
+How to solve it:
+
+Choose another name that is not already being used. For example, if my-first-project is unavailable, try my-first-project-2026.
+
+After changing the name, try creating the repository again.
+
+6. Conclusion
+
+Creating a GitHub repository is a simple but important skill for anyone learning programming.
+
+Through this procedure, a beginner can learn how to create a repository, add project information, and save changes using commits.
+
+Understanding these basic steps provides a good starting point for managing future programming projects and working with other developers.
+
+EXERCISE B: API REFERENCE ENTRY
+
+Topic: Creating a New Task in a Project Management Application
+
+1. Overview
+
+In a project management application, users need a simple way to create tasks and assign responsibilities to different team members.
+
+This API endpoint is designed to make that possible. It allows an authenticated user to create a new task within an existing project.
+
+When creating a task, the user can provide its title, description, assignee, due date, and priority level.
+
+Once the task is successfully created, the system returns its details and assigns it a unique identification number.
+
+2. HTTP Method and Endpoint
+
+HTTP Method: POST
+
+Endpoint Path:
+
+/api/v1/projects/{projectId}/tasks
+
+Example:
+
+POST /api/v1/projects/101/tasks
+
+The POST method is used because the purpose of this endpoint is to create a new resource on the server.
+
+3. Description
+
+This endpoint allows an authenticated user to add a new task to a particular project.
+
+For example, a project manager may want to assign a database assignment to a team member and set a deadline for completing it.
+
+The user must provide the task title, assignee ID, due date, and priority level. Providing a description is optional.
+
+The system checks the submitted information before creating the task.
+
+4. Request Parameters
+
+The endpoint uses a path parameter and a JSON request body.
+
+A. Path Parameters
+
+Parameter
+
+Data Type
+
+Required
+
+Description
+
+projectId
+
+Integer
+
+Yes
+
+Identifies the project where the new task will be added.
+
+For example, in /api/v1/projects/101/tasks, the project ID is 101.
+
+B. Query Parameters
+
+This endpoint does not require query parameters because all the necessary task information is provided through the path and request body.
+
+C. Request Body Parameters
+
+Parameter
+
+Data Type
+
+Required
+
+Description
+
+title
+
+String
+
+Yes
+
+The name of the task being created.
+
+description
+
+String
+
+No
+
+Provides additional information about the task.
+
+assigneeId
+
+Integer
+
+Yes
+
+Identifies the user responsible for completing the task.
+
+dueDate
+
+String (Date)
+
+Yes
+
+Specifies the task deadline using the YYYY-MM-DD format.
+
+priority
+
+String
+
+Yes
+
+Defines the importance of the task. Accepted values are low, medium, and high.
+
+5. Required Request Headers
+
+The following headers are needed when sending a request to this endpoint.
+
+Header
+
+Required
+
+Description
+
+Authorization
+
+Yes
+
+Provides the user's authentication token to verify their identity.
+
+Content-Type
+
+Yes
+
+Tells the server that the request body contains JSON data.
+
+Accept
+
+Yes
+
+Tells the server that the client expects a JSON response.
+
+Example request headers:
+
+Authorization: Bearer your_access_token
+Content-Type: application/json
+Accept: application/json
+
+The authentication token should be replaced with a valid access token belonging to the user.
+
+6. Example Request Body (JSON)
+
+Below is an example of how a user can send information to create a new task.
+
+{
+  "title": "Complete Database Assignment",
+  "description": "Design and implement a school management database using MySQL.",
+  "assigneeId": 25,
+  "dueDate": "2026-12-05",
+  "priority": "high"
+}
+
+Understanding the example:
+
+title: Gives the task its name.
+
+description: Explains what needs to be done.
+
+assigneeId: Identifies user 25 as the person responsible for the task.
+
+dueDate: Sets December 5, 2026, as the deadline.
+
+priority: Marks the task as high priority.
+
+This example shows how the different parameters work together when creating a task.
+
+7. Successful Response
+
+When the server receives valid information and successfully creates the task, it returns the HTTP status code:
+
+201 Created
+
+Below is an example of the response the user would receive.
+
+{
+  "success": true,
+  "message": "Task created successfully.",
+  "data": {
+    "id": 501,
+    "projectId": 101,
+    "title": "Complete Database Assignment",
+    "description": "Design and implement a school management database using MySQL.",
+    "assigneeId": 25,
+    "dueDate": "2026-12-05",
+    "priority": "high",
+    "status": "pending",
+    "createdAt": "2026-11-21T10:30:00Z"
+  }
+}
+
+Explanation:
+
+The response confirms that the task has been created successfully.
+
+The system automatically generates a unique task ID of 501. It also confirms the project, assigned user, deadline, and priority level.
+
+The initial task status is set to pending, meaning the task has been created but has not yet been completed.
+
+8. HTTP Response Codes
+
+Different situations may occur when a user sends a request. The server uses HTTP response codes to explain whether the request was successful or whether something went wrong.
+
+The following are the possible response codes for this endpoint.
+
+Status Code
+
+Name
+
+Explanation
+
+201
+
+Created
+
+The task has been created successfully.
+
+400
+
+Bad Request
+
+The request contains invalid or incorrectly formatted information.
+
+401
+
+Unauthorized
+
+The user has not provided a valid authentication token.
+
+403
+
+Forbidden
+
+The user is authenticated but does not have permission to create tasks in the selected project.
+
+404
+
+Not Found
+
+The specified project or assignee does not exist.
+
+409
+
+Conflict
+
+The request conflicts with an existing resource or project rule.
+
+415
+
+Unsupported Media Type
+
+The request uses an unsupported content format instead of JSON.
+
+422
+
+Unprocessable Entity
+
+The submitted information fails validation, such as an invalid priority level.
+
+429
+
+Too Many Requests
+
+The user has sent more requests than the system allows within a specific period.
+
+500
+
+Internal Server Error
+
+An unexpected problem has occurred on the server.
+
+503
+
+Service Unavailable
+
+The server is temporarily unavailable and cannot process the request.
+
+9. Validation Rules
+
+Before accepting a new task, the system needs to check whether the information provided by the user is correct.
+
+The following validation rules should be applied:
+
+The task title must not be empty.
+
+The description is optional and can be left blank.
+
+The assignee ID must belong to an existing user.
+
+The due date must follow the YYYY-MM-DD format.
+
+The priority must be either low, medium, or high.
+
+The project ID must identify an existing project.
+
+The user must be authenticated and have permission to create tasks in the selected project.
+
+If the submitted information does not meet these requirements, the server should return an appropriate error response explaining the problem.
+
+10. Conclusion
+
+This API endpoint provides a straightforward way to create tasks within a project management application.
+
+By using the POST method, users can submit the necessary information and receive confirmation when a task is successfully created.
+
+In designing this endpoint, I have considered the importance of authentication, correct data formats, validation, and appropriate HTTP response codes.
+
+These elements help make the API easier to understand, use, and maintain.
+
+END OF ASSIGNMENT
